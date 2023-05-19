@@ -1,0 +1,58 @@
+.h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: blue;
+    margin-top: 1%;
+    margin-bottom: 1%;    
+}
+
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;   
+    text-align: center;
+    width: auto;
+    margin: auto;     
+}
+
+.thead {
+    background-color: #f2f2f2;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tr {       
+    text-align: center;
+}
+
+.th {
+    border: 1px solid black;
+    padding: 1em;
+    text-align: center;   
+}
+
+.tbody {    
+    padding: 12px 15px;
+}
+
+.td {
+    padding: 1em;
+    word-wrap: break-word;    
+}
+
+.p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+.button {
+    background-color: transparent;
+    color: black;
+    border: 1px solid #000000;
+    border-radius: 0.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    width: auto;
+    margin: 1% auto;
+}

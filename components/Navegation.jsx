@@ -15,27 +15,26 @@ const links = [
     label: "Notification",
     route: "/notification ",
   },
+
 ];
 
 export default function NavigationPage() {
   return (
     <header>
-      <nav className="bg-gray-100">
-        <ul className="flex justify-center space-x-6 text-gray-600 text-lg font-medium py-4">
-          <li className="hover:text-gray-900 transition duration-300 ease-in-out">
+      <nav>
+        <ul className="flex justify-center space-x-6 text-gray-600 text-sm font-medium">
+          <li className="hover:text-gray-900">
             <Link href="/">Inicio</Link>
           </li>
-          <li className="hover:text-gray-900 transition duration-300 ease-in-out">
+          <li className="hover:text-gray-900">
             <Link href="/products">Productos</Link>
           </li>
-          <li className="hover:text-gray-900 transition duration-300 ease-in-out">
+          <li className="hover:text-gray-900">
             <Link href="/notification">Notificaciones</Link>
           </li>
-          <li className="hover:text-gray-900 transition duration-300 ease-in-out">
-            <Link href="/login">Iniciar Sesión</Link>
-          </li>
-          <li className="hover:text-gray-900 transition duration-300 ease-in-out">
-            <Link href="/register">Registrar</Link>
+
+          <li className="hover:text-gray-900">
+            <Link href="/shopKart" >Carrito</Link>
           </li>
         </ul>
       </nav>

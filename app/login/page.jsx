@@ -2,25 +2,38 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
+
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { push } = useRouter();
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
-  // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3002/user/login", {
+
+    // Enviar credenciales al servidor para autenticar al usuario
+    const response = await fetch("http://localhost:3002/user/login ", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
     });
+
     if (response.ok) {
-      const data = await response.json();
-      console.log(data); // Aquí puedes manejar la respuesta de la API
-      push("/products"); // redireccionar a la página de productos
+      const { token } = await response.json();
+
+      // Almacenar el token de autenticación en localStorage
+      localStorage.setItem("token", token);
+
+      // Redirigir al usuario a la página de productos
+      router.push("/products");
+    } else {
+      // Si la autenticación falla, mostrar un mensaje de error
+      setError("Credenciales inválidas. Por favor, inténtalo de nuevo.");
     }
   };
 
@@ -84,6 +97,9 @@ export default function LoginPage() {
                 Iniciar Sesión
               </button>
             </div>
+            {error && (
+              <div className="text-red-500 text-center">{error}</div>
+            )}
           </form>
         </div>
       </div>
